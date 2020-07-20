@@ -7,7 +7,7 @@ function PlaceOrderScreen(props) {
 
   const cart = useSelector(state => state.cart);
   const orderCreate = useSelector(state => state.orderCreate);
-  const { loading, success, error, order } = orderCreate;
+  const { success, order } = orderCreate;
 
   const { cartItems, shipping, payment } = cart;
   if (!shipping.address) {
@@ -23,7 +23,7 @@ function PlaceOrderScreen(props) {
   const dispatch = useDispatch();
 
   const placeOrderHandler = () => {
-    // create an order
+    //Creating an order
     dispatch(createOrder({
       orderItems: cartItems, shipping, payment, itemsPrice, shippingPrice,
       taxPrice, totalPrice
