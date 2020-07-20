@@ -17,6 +17,7 @@ function HomeScreen(props) {
     return () => {
       //
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [category]);
 
   const submitHandler = (e) => {

@@ -8,7 +8,7 @@ function RegisterScreen(props) {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [rePassword, setRePassword] = useState('');
+  const [ setRePassword] = useState('');
   const userRegister = useSelector(state => state.userRegister);
   const { loading, userInfo, error } = userRegister;
   const dispatch = useDispatch();
@@ -21,6 +21,7 @@ function RegisterScreen(props) {
     return () => {
       //
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [userInfo]);
 
   const submitHandler = (e) => {

@@ -8,7 +8,7 @@ function OrdersScreen(props) {
   const { loading, orders } = orderList;
 
   const orderDelete = useSelector(state => state.orderDelete);
-  const { loading: loadingDelete, success: successDelete, error: errorDelete } = orderDelete;
+  const { success: successDelete } = orderDelete;
 
   const dispatch = useDispatch();
 
@@ -17,8 +17,9 @@ function OrdersScreen(props) {
     return () => {
       //
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [successDelete]);
-
+  
   const deleteHandler = (order) => {
     dispatch(deleteOrder(order._id));
   }

@@ -30,9 +30,7 @@ function ProductsScreen(props) {
 
   const productDelete = useSelector((state) => state.productDelete);
   const {
-    loading: loadingDelete,
     success: successDelete,
-    error: errorDelete,
   } = productDelete;
   const dispatch = useDispatch();
 
@@ -44,6 +42,7 @@ function ProductsScreen(props) {
     return () => {
       //
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [successSave, successDelete]);
 
   const openModal = (product) => {

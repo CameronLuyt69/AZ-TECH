@@ -27,9 +27,9 @@ app.get('/api/config/paypal', (req, res) => {
   res.send(config.PAYPAL_CLIENT_ID);
 });
 app.use('/uploads', express.static(path.join(__dirname, '/../uploads')));
-app.use(express.static(path.join(__dirname, '/../frontend/build')));
+app.use(express.static(path.join(__dirname, '/../frontend')));
 app.get('*', (req, res) => {
-  res.sendFile(path.join(`${__dirname}/../frontend/build/index.html`));
+  res.sendFile(path.join(`${__dirname}/../frontend/index.html`));
 });
 
 app.listen(config.PORT, () => {
