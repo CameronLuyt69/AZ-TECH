@@ -3,22 +3,26 @@ import path from 'path';
 import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
 import config from './config';
+import dotenv from 'dotenv'
 import userRoute from './routes/userRoute';
 import productRoute from './routes/productRoute';
 import orderRoute from './routes/orderRoute';
 import uploadRoute from './routes/uploadRoute';
+
+dotenv.config();
 
 const mongodbUrl = config.MONGODB_URL;
 mongoose
   .connect(mongodbUrl, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    useCreateIndex: true,
+    useCreateIndex: true
   })
   .catch((error) => console.log(error.reason));
 
 const app = express();
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/api/uploads', uploadRoute);
 app.use('/api/users', userRoute);
 app.use('/api/products', productRoute);

@@ -4,15 +4,19 @@ import { isAuth, isAdmin } from '../util';
 
 const router = express.Router();
 
+// Get all orders
 router.get("/", isAuth, async (req, res) => {
   const orders = await Order.find({}).populate('user');
   res.send(orders);
 });
+
+// Get Admin orders
 router.get("/mine", isAuth, async (req, res) => {
   const orders = await Order.find({ user: req.user._id });
   res.send(orders);
 });
 
+// Get order
 router.get("/:id", isAuth, async (req, res) => {
   const order = await Order.findOne({ _id: req.params.id });
   if (order) {
@@ -22,6 +26,7 @@ router.get("/:id", isAuth, async (req, res) => {
   }
 });
 
+// Delete order
 router.delete("/:id", isAuth, isAdmin, async (req, res) => {
   const order = await Order.findOne({ _id: req.params.id });
   if (order) {
@@ -32,6 +37,7 @@ router.delete("/:id", isAuth, isAdmin, async (req, res) => {
   }
 });
 
+// New order
 router.post("/", isAuth, async (req, res) => {
   const newOrder = new Order({
     orderItems: req.body.orderItems,
@@ -47,6 +53,7 @@ router.post("/", isAuth, async (req, res) => {
   res.status(201).send({ message: "New Order Created", data: newOrderCreated });
 });
 
+// Edit order
 router.put("/:id/pay", isAuth, async (req, res) => {
   const order = await Order.findById(req.params.id);
   if (order) {

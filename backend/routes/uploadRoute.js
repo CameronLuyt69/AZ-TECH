@@ -17,6 +17,7 @@ const upload = multer({ storage });
 
 const router = express.Router();
 
+// Upload image
 router.post('/', upload.single('image'), (req, res) => {
   res.send(`/${req.file.path}`);
 });
@@ -28,7 +29,7 @@ aws.config.update({
 const s3 = new aws.S3();
 const storageS3 = multerS3({
   s3,
-  bucket: 'amazona-bucket',
+  bucket: 'AZ-TECH-bucket',
   acl: 'public-read',
   contentType: multerS3.AUTO_CONTENT_TYPE,
   key(req, file, cb) {
