@@ -37,14 +37,14 @@ function SigninScreen(props) {
           {error && <div>{error}</div>}
         </li>
         <li>
-          <label htmlFor="email">
+          <h5>
             Email
-          </label>
+          </h5>
           <input type="email" name="email" id="email" onChange={(e) => setEmail(e.target.value)}>
           </input>
         </li>
         <li>
-          <label htmlFor="password">Password</label>
+          <h5>Password</h5>
           <input type="password" id="password" name="password" onChange={(e) => setPassword(e.target.value)}>
           </input>
         </li>

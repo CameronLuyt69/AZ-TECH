@@ -115,17 +115,12 @@ function ProductsScreen(props) {
               </li>
 
               <li>
-                <label htmlFor="name">Name</label>
-                <input
-                  type="text"
-                  name="name"
-                  value={name}
-                  id="name"
-                  onChange={(e) => setName(e.target.value)}
-                ></input>
+                <h5>Name</h5>
+                <input type="text" name="name" value={name} id="name" onChange={(e) => setName(e.target.value)}></input>
               </li>
+              
               <li>
-                <label htmlFor="price">Price</label>
+                <h5>Price</h5>
                 <input
                   type="text"
                   name="price"
@@ -135,7 +130,7 @@ function ProductsScreen(props) {
                 ></input>
               </li>
               <li>
-                <label htmlFor="image">Image</label>
+                <h5>Image</h5>
                 <input
                   type="text"
                   name="image"
@@ -147,7 +142,7 @@ function ProductsScreen(props) {
                 {uploading && <div>Uploading...</div>}
               </li>
               <li>
-                <label htmlFor="brand">Brand</label>
+                <h5>Brand</h5>
                 <input
                   type="text"
                   name="brand"
@@ -157,7 +152,7 @@ function ProductsScreen(props) {
                 ></input>
               </li>
               <li>
-                <label htmlFor="countInStock">CountInStock</label>
+                <h5>CountInStock</h5>
                 <input
                   type="text"
                   name="countInStock"
@@ -167,7 +162,7 @@ function ProductsScreen(props) {
                 ></input>
               </li>
               <li>
-                <label htmlFor="name">Category</label>
+                <h5>Category</h5>
                 <input
                   type="text"
                   name="category"
@@ -177,7 +172,7 @@ function ProductsScreen(props) {
                 ></input>
               </li>
               <li>
-                <label htmlFor="description">Description</label>
+                <h5>Description</h5>
                 <textarea
                   name="description"
                   value={description}

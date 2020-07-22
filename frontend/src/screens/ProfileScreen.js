@@ -43,43 +43,39 @@ function ProfileScreen(props) {
     <div className="profile-info">
       <div className="form">
         <form onSubmit={submitHandler} >
-          <ul className="form-container">
-            <li>
+          <div className="form-container">
+            <div>
               <h2>User Profile</h2>
-            </li>
-            <li>
+            </div>
+            <div>
               {loading && <div>Loading...</div>}
               {error && <div>{error}</div>}
               {success && <div>Profile Saved</div>}
-            </li>
-            <li>
-              <label htmlFor="name">
-                Name
-          </label>
-              <input value={name} type="name" name="name" id="name" onChange={(e) => setName(e.target.value)}>
-              </input>
-            </li>
-            <li>
-              <label htmlFor="email">
-                Email
-          </label>
-              <input value={email} type="email" name="email" id="email" onChange={(e) => setEmail(e.target.value)}>
-              </input>
-            </li>
-            <li>
-              <label htmlFor="password">Password</label>
-              <input value={password} type="password" id="password" name="password" onChange={(e) => setPassword(e.target.value)}>
-              </input>
-            </li>
+            </div>
 
-            <li>
+            <div className="input-field">
+              <h5>Name</h5>
+              <input value={name} type="name" name="name" id="name" onChange={(e) => setName(e.target.value)}></input>
+            </div>
+
+            <div className="input-field">
+              <h5>Email</h5>
+              <input value={email} type="email" name="email" id="email" onChange={(e) => setEmail(e.target.value)}></input>
+            </div>
+
+            <div className="input-field">
+              <h5>Password</h5>
+              <input value={password} className="inputform" type="password" id="password" name="password" onChange={(e) => setPassword(e.target.value)}></input>
+            </div>
+
+            <div>
               <button type="submit" className="button primary">Update</button>
-            </li>
-            <li>
+            </div>
+            <div>
               <button type="button" onClick={handleLogout} className="button secondary full-width">Logout</button>
-            </li>
+            </div>
 
-          </ul>
+          </div>
         </form>
       </div>
     </div>
