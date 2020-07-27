@@ -8,6 +8,7 @@ function RegisterScreen(props) {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  // eslint-disable-next-line
   const [rePassword, setRePassword] = useState('');
   const userRegister = useSelector(state => state.userRegister);
   const { loading, userInfo, error } = userRegister;
@@ -19,7 +20,6 @@ function RegisterScreen(props) {
       props.history.push(redirect);
     }
     return () => {
-      //
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [userInfo]);
@@ -31,9 +31,11 @@ function RegisterScreen(props) {
   return <div className="form">
     <form onSubmit={submitHandler} >
       <ul className="form-container">
+
         <li>
           <h2>Create Account</h2>
         </li>
+
         <li>
           {loading && <div>Loading...</div>}
           {error && <div>Please enter all valid details</div>}
@@ -54,13 +56,14 @@ function RegisterScreen(props) {
           <h5>Re-Enter Password</h5>
           <input type="password" id="rePassword" name="rePassword" onChange={(e) => setRePassword(e.target.value)}></input>
         </li>
+        
         <li>
           <button type="submit" className="button primary">Register</button>
         </li>
+
         <li>
           Already have an account?
           <Link to={redirect === "/" ? "signin" : "signin?redirect=" + redirect} className="button secondary text-center" >Create your AZ-TECH account</Link>
-
         </li>
 
       </ul>

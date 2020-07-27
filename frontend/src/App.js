@@ -36,12 +36,12 @@ function App() {
 
         <header>
           <div className="logos">
-            <a href="/" data-target="slide-out" className="sidenav-trigger bolder"><i className="fas fa-bars" aria-hidden="true"></i></a>
+            <a href="/" data-target="slide-out" className="sidenav-trigger bolder"><i className="fas fa-bars"></i></a>
             <Link to="/">AZ-TECH</Link>
           </div>
           <div className="navbar">
             <ul>
-              <li><i className="fas fa-home"></i></li>
+              <li><Link to="/"><i className="fas fa-home"></i></Link></li>
               <li><Link to="/cart/:id"><i className="fas fa-shopping-cart"></i></Link></li>
             {userInfo && userInfo.isAdmin && (
               <>
