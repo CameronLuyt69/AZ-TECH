@@ -13,7 +13,7 @@ router.get("/", isAuth, async (req, res) => {
 // Get Admin orders
 router.get("/mine", isAuth, async (req, res) => {
   const orders = await Order.find({ user: req.user._id });
-  res.send(orders);
+  res.send(orders).catch((error) => console.log(error.reason));
 });
 
 // Get order
@@ -31,7 +31,7 @@ router.delete("/:id", isAuth, isAdmin, async (req, res) => {
   const order = await Order.findOne({ _id: req.params.id });
   if (order) {
     const deletedOrder = await order.remove();
-    res.send(deletedOrder);
+    res.send(deletedOrder).catch((error) => console.log(error.reason));
   } else {
     res.status(404).send("Order Not Found.")
   }
@@ -49,8 +49,12 @@ router.post("/", isAuth, async (req, res) => {
     shippingPrice: req.body.shippingPrice,
     totalPrice: req.body.totalPrice,
   });
-  const newOrderCreated = await newOrder.save();
-  res.status(201).send({ message: "New Order Created", data: newOrderCreated });
+  const newOrderCreated = await newOrder.save().catch((error) => console.log(error.reason));
+  if (newOrderCreated) {
+    res.status(201).send({ message: "New Order Created", data: newOrderCreated });
+  } else {
+    res.status(402).send("Order Failed")
+  }
 });
 
 // Edit order
@@ -68,7 +72,7 @@ router.put("/:id/pay", isAuth, async (req, res) => {
       }
     }
     const updatedOrder = await order.save();
-    res.send({ message: 'Order Paid.', order: updatedOrder });
+    res.send({ message: 'Order Paid.', order: updatedOrder }).catch((error) => console.log(error.reason));
   } else {
     res.status(404).send({ message: 'Order not found.' })
   }

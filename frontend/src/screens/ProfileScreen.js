@@ -45,7 +45,7 @@ function ProfileScreen(props) {
         <form onSubmit={submitHandler} >
           <div className="form-container">
             <div>
-              <h2>User Profile</h2>
+              <h2>User Profile    <i className="fas fa-user"></i></h2>
             </div>
             <div>
               {loading && <div>Loading...</div>}
@@ -55,17 +55,17 @@ function ProfileScreen(props) {
 
             <div className="input-field">
               <h5>Name</h5>
-              <input value={name} type="name" name="name" id="name" onChange={(e) => setName(e.target.value)}></input>
+              <input value={name} type="name" name="name" id="name" onChange={(e) => setName(e.target.value)} />
             </div>
 
             <div className="input-field">
               <h5>Email</h5>
-              <input value={email} type="email" name="email" id="email" onChange={(e) => setEmail(e.target.value)}></input>
+              <input value={email} type="email" name="email" id="email" onChange={(e) => setEmail(e.target.value)} />
             </div>
 
             <div className="input-field">
               <h5>Password</h5>
-              <input value={password} className="inputform" type="password" id="password" name="password" onChange={(e) => setPassword(e.target.value)}></input>
+              <input value={password} className="inputform" type="password" id="password" name="password" onChange={(e) => setPassword(e.target.value)} />
             </div>
 
             <div>
@@ -100,7 +100,7 @@ function ProfileScreen(props) {
                   <td>{order.totalPrice}</td>
                   <td>{order.isPaid}</td>
                   <td>
-                    <Link to={"/order/" + order._id}>DETAILS</Link>
+                    <Link to={"/order/" + order._id}><i className="fas fa-info-circle"></i></Link>
                   </td>
                 </tr>)}
               </tbody>

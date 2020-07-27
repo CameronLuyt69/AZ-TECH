@@ -27,6 +27,7 @@ const orderItemSchema = new mongoose.Schema({
 });
 
 // Order
+const date = new Date().toISOString();
 const orderSchema = new mongoose.Schema({
   user: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
   orderItems: [orderItemSchema],
@@ -37,9 +38,9 @@ const orderSchema = new mongoose.Schema({
   shippingPrice: { type: Number },
   totalPrice: { type: Number },
   isPaid: { type: Boolean, default: false },
-  paidAt: { type: Date },
+  paidAt: { type: {date} },
   isDelivered: { type: Boolean, default: false },
-  deliveredAt: { type: Date },
+  deliveredAt: { type: {date} },
 }, {
   timestamps: true
 });

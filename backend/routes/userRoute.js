@@ -11,7 +11,7 @@ router.post('/register', async (req, res) => {
     email: req.body.email,
     password: req.body.password,
   });
-  const newUser = await user.save();
+  const newUser = await user.save().catch((error) => console.log(error.reason));
   if (newUser) {
     res.send({
       _id: newUser.id,
@@ -19,7 +19,7 @@ router.post('/register', async (req, res) => {
       email: newUser.email,
       isAdmin: newUser.isAdmin,
       token: getToken(newUser)
-    });
+    }).catch((error) => console.log(error.reason));
   } else {
     res.status(401).send({ message: 'Invalid User Data.' });
   }

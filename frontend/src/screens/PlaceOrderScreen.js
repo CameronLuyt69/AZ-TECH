@@ -1,8 +1,10 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
 import CheckoutSteps from '../components/CheckoutSteps';
 import { createOrder } from '../actions/orderActions';
+import { Route, Link } from 'react-router-dom';
+import ProfileScreen from '../screens/ProfileScreen';
+
 function PlaceOrderScreen(props) {
 
   const cart = useSelector(state => state.cart);
@@ -25,8 +27,7 @@ function PlaceOrderScreen(props) {
   const placeOrderHandler = () => {
     //Creating an order
     dispatch(createOrder({
-      orderItems: cartItems, shipping, payment, itemsPrice, shippingPrice,
-      taxPrice, totalPrice
+      orderItems: cartItems, shipping, payment, itemsPrice, shippingPrice, taxPrice, totalPrice
     }));
   }
   useEffect(() => {
@@ -95,13 +96,14 @@ function PlaceOrderScreen(props) {
             }
           </ul>
         </div>
-
-      
       </div>
+
       <div className="placeorder-action">
+        <Route path="/profile" component={ProfileScreen} />
+
         <ul>
           <li>
-            <button className="button primary full-width" onClick={placeOrderHandler} >Place Order</button>
+            <Link to="/profile"><button className="button primary full-width" onClick={placeOrderHandler}>Place Order</button></Link>
           </li>
           <li>
             <h3>Order Summary</h3>
@@ -124,13 +126,9 @@ function PlaceOrderScreen(props) {
           </li>
         </ul>
 
-
-
       </div>
-
     </div>
   </div>
-
 }
 
 export default PlaceOrderScreen;

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import axios from 'axios';
 import {
   saveProduct,
   listProducts,
@@ -17,7 +16,6 @@ function ProductsScreen(props) {
   const [category, setCategory] = useState('');
   const [countInStock, setCountInStock] = useState('');
   const [description, setDescription] = useState('');
-  const [uploading, setUploading] = useState(false);
   const productList = useSelector((state) => state.productList);
   const { products } = productList;
 
@@ -74,31 +72,11 @@ function ProductsScreen(props) {
   const deleteHandler = (product) => {
     dispatch(deleteProdcut(product._id));
   };
-  const uploadFileHandler = (e) => {
-    const file = e.target.files[0];
-    const bodyFormData = new FormData();
-    bodyFormData.append('image', file);
-    setUploading(true);
-    axios
-      .post('/api/uploads/s3', bodyFormData, {
-        headers: {
-          'Content-Type': 'multipart/form-data',
-        },
-      })
-      .then((response) => {
-        setImage(response.data);
-        setUploading(false);
-      })
-      .catch((err) => {
-        console.log(err);
-        setUploading(false);
-      });
-  };
   return (
     <div className="content content-margined">
       <div className="product-header">
         <h3>Products</h3>
-        <button className="button primary" onClick={() => openModal({})}>
+        <button className="button" onClick={() => openModal({})}>
           Create Product
         </button>
       </div>
@@ -116,7 +94,7 @@ function ProductsScreen(props) {
 
               <li>
                 <h5>Name</h5>
-                <input type="text" name="name" value={name} id="name" onChange={(e) => setName(e.target.value)}></input>
+                <input type="text" name="name" value={name} id="name" onChange={(e) => setName(e.target.value)} />
               </li>
               
               <li>
@@ -130,16 +108,14 @@ function ProductsScreen(props) {
                 ></input>
               </li>
               <li>
-                <h5>Image</h5>
+                <h5>Image URL</h5>
                 <input
                   type="text"
                   name="image"
                   value={image}
                   id="image"
                   onChange={(e) => setImage(e.target.value)}
-                ></input>
-                <input type="file" onChange={uploadFileHandler}></input>
-                {uploading && <div>Uploading...</div>}
+                 />
               </li>
               <li>
                 <h5>Brand</h5>
@@ -149,7 +125,7 @@ function ProductsScreen(props) {
                   value={brand}
                   id="brand"
                   onChange={(e) => setBrand(e.target.value)}
-                ></input>
+                />
               </li>
               <li>
                 <h5>CountInStock</h5>
@@ -159,7 +135,7 @@ function ProductsScreen(props) {
                   value={countInStock}
                   id="countInStock"
                   onChange={(e) => setCountInStock(e.target.value)}
-                ></input>
+                />
               </li>
               <li>
                 <h5>Category</h5>
@@ -169,7 +145,7 @@ function ProductsScreen(props) {
                   value={category}
                   id="category"
                   onChange={(e) => setCategory(e.target.value)}
-                ></input>
+                />
               </li>
               <li>
                 <h5>Description</h5>
@@ -178,7 +154,7 @@ function ProductsScreen(props) {
                   value={description}
                   id="description"
                   onChange={(e) => setDescription(e.target.value)}
-                ></textarea>
+                />
               </li>
               <li>
                 <button type="submit" className="button primary">
@@ -221,13 +197,13 @@ function ProductsScreen(props) {
                 <td>{product.brand}</td>
                 <td>
                   <button className="button" onClick={() => openModal(product)}>
-                    Edit
+                    <i className="fas fa-edit"></i>
                   </button>{' '}
                   <button
                     className="button"
                     onClick={() => deleteHandler(product)}
                   >
-                    Delete
+                    <i className="fas fa-trash-alt"></i>
                   </button>
                 </td>
               </tr>

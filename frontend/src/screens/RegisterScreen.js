@@ -36,7 +36,7 @@ function RegisterScreen(props) {
         </li>
         <li>
           {loading && <div>Loading...</div>}
-          {error && <div>{error}</div>}
+          {error && <div>Please enter all valid details</div>}
         </li>
         <li>
           <h5>Name</h5>

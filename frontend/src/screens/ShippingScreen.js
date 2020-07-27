@@ -27,34 +27,29 @@ function ShippingScreen(props) {
           </li>
 
           <li>
-            <label htmlFor="address">
+            <h5>
               Address
-          </label>
-            <input type="text" name="address" id="address" onChange={(e) => setAddress(e.target.value)}>
-            </input>
+            </h5>
+            <input type="text" name="address" id="address" onChange={(e) => setAddress(e.target.value)} />
           </li>
           <li>
-            <label htmlFor="city">
+            <h5>
               City
-          </label>
-            <input type="text" name="city" id="city" onChange={(e) => setCity(e.target.value)}>
-            </input>
+            </h5>
+            <input type="text" name="city" id="city" onChange={(e) => setCity(e.target.value)} />
           </li>
           <li>
-            <label htmlFor="postalCode">
+            <h5>
               Postal Code
-          </label>
-            <input type="text" name="postalCode" id="postalCode" onChange={(e) => setPostalCode(e.target.value)}>
-            </input>
+            </h5>
+            <input type="text" name="postalCode" id="postalCode" onChange={(e) => setPostalCode(e.target.value)} />
           </li>
           <li>
-            <label htmlFor="country">
+            <h5>
               Country
-          </label>
-            <input type="text" name="country" id="country" onChange={(e) => setCountry(e.target.value)}>
-            </input>
+            </h5>
+            <input type="text" name="country" id="country" onChange={(e) => setCountry(e.target.value)} />
           </li>
-
 
           <li>
             <button type="submit" className="button primary">Continue</button>

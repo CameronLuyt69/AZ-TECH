@@ -34,7 +34,7 @@ function SigninScreen(props) {
         </li>
         <li>
           {loading && <div>Loading...</div>}
-          {error && <div>{error}</div>}
+          {error && <div>Please enter valid login details</div>}
         </li>
         <li>
           <h5>

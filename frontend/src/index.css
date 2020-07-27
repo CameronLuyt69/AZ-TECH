@@ -93,6 +93,7 @@ th {
 }
 .foot1 {
   color: #55f;
+  flex: 1 1 5rem;
   display: flex;
   flex-direction: row;
   background-color: rgb(0, 0, 0);
@@ -157,6 +158,13 @@ a:hover {
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
+  width: 35rem;
+}
+.product-details {
+  height: 30%;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
 }
 .product-name {
   text-decoration: none;
@@ -186,6 +194,9 @@ a:hover {
 ul.review {
   list-style-type: none;
   padding: 0;
+}
+.write-review {
+  background-color: #f8f8f8;
 }
 .review li {
   margin: 1rem;
@@ -251,7 +262,8 @@ a > .rating > span:last-child {
   margin-bottom: 1rem;
 }
 .back-to-result {
-  padding: 4rem;
+  padding: 1rem;
+  font-size: 4rem;
 }
 .details-action {
   border: 0.1rem #808080 solid;
@@ -276,6 +288,7 @@ button {
   padding: 1rem;
   border: 2px #ddd9d9 solid;
   border-radius: 25px;
+  background-color: white;
   cursor: pointer;
 }
 .button:hover {
@@ -305,10 +318,11 @@ button {
   flex: 3 1 60rem;
 }
 .cart-action {
-  flex: 1 1 20rem;
+  flex: 1 1 5rem;
+  height: 14rem;
   background-color: #f0f0f0;
   border-radius: 0.5rem;
-  padding: 5rem;
+  padding: 1rem;
 }
 .cart-list-container {
   padding: 0;
@@ -448,7 +462,7 @@ tbody > tr:nth-child(odd) {
 .placeorder-action > ul > li:last-child {
   font-size: 2rem;
   font-weight: bold;
-  color: #c04000;
+  color: #55f;
 }
 .placeorder-actions-payment > div {
   width: 100%;
@@ -506,8 +520,40 @@ tbody > tr:nth-child(odd) {
   justify-content: space-evenly;
   align-items: center;
 }
-
-.filter button,
+.search {
+  width: 100%;
+}
+.searchbox {
+  display: flex;
+  flex-direction: row;
+}
+.searchbox input {
+  -webkit-appearance: none !important;
+  background-clip: padding-box;
+  background-color: white;
+  vertical-align: middle;
+  border-radius: 5px;
+  border: 2px solid #020202;
+  font-size: 2rem;
+  font-family: 'Righteous';
+  width: 100%;
+  line-height: 2;
+  padding: 0.375rem 1.25rem;
+  -webkit-transition: border-color 0.2s;
+  -moz-transition: border-color 0.2s;
+  transition: border-color 0.2s;
+}
+.searchbox input:focus {
+  transition: all 0.5s;
+  box-shadow: 0 0 40px #55f;
+  border-color: #55f;
+  outline: none;
+}
+.searchbox button {
+  width: 5rem;
+  border-radius: 5px;
+  border: 2px black solid;
+}
 .filter select {
   padding: 1rem;
   border-radius: 25px;
@@ -534,49 +580,7 @@ tbody > tr:nth-child(odd) {
 }
 
 /*==================================================*/
-/* Tests */
-.search-box {
-  position: absolute;
-  transform: translate(-50%, -50%);
-  background: #2f3640;
-  height: 40px;
-  border-radius: 40px;
-  padding: 10px;
-}
-.search-box:hover > .search-txt{
-  width: 240px;
-  padding: 0 6px;
-}
-.search-box:hover > .search-btn{
-  background: white;
-}
 
-.search-btn {
-  color: #e84118;
-  float: right;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: #2f3640;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: 0.4s;
-}
-
-.search-text {
-  border: none;
-  background: none;
-  outline: none;
-  float: left;
-  padding: 0;
-  color: white;
-  font-size: 16px;
-  transition: 0.4s;
-  line-height: 40px;
-  width: 0px;
-}
-/*===========================================================*/
 header {
   position: absolute;
   top: 0;
@@ -589,6 +593,10 @@ header {
 header div a {
   color: #55f;
   font-size: 4rem;
+  padding-right: 3rem;
+}
+header div Link {
+  padding-left: 3rem;
 }
 
 header .logos{
@@ -626,7 +634,12 @@ header .navbar ul li a.active {
   color: rgb(0, 0, 0);
   background: #55f;
 }
-@media (max-width: 991px){
+@media (max-width: 780px){
+  /* Header/Nav */
+  .main {
+    grid-area: main;
+    padding-top: 22rem;
+  }
   header {
     padding: 0 20px;
   }
@@ -646,5 +659,78 @@ header .navbar ul li a.active {
   header .navbar ul li a {
     border-bottom: 1px solid #55f;
   }
+  /*==============================================================*/
+  /* Footer */
+  .footer {
+    grid-area: footer;
+    background-color: rgb(51, 51, 51);
+    color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .footer .footy h3 {
+    font-size: 2rem;
+  }
+  .footy {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+  }
+  .foot1 {
+    color: #55f;
+    flex: 1 1 5rem;
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(0, 0, 0);
+    width: 100%;
+    align-items: center;
+    justify-content: space-evenly;
+    padding-bottom: 2rem;
+    padding-top: 0rem;
+  }
+  .acc {
+    font-size: 1.2rem;
+    font-family: monospace;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .infomo {
+    font-size: 1.2rem;
+    font-family: monospace;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .socials {
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 1.2rem;
+    color: #55f;
+  }
+  .socials a {
+    color: #55f;
+  }
+  .foot2 {
+    height: 3rem;
+    font-size: 1.2rem;
+  }
+}
+/*==============================================================*/
+.infomo Link {
+  text-decoration: #55f;
+}
+/* Terms Of Use */
 
+.term {
+  padding-left: 2rem
+}
+.terms {
+  padding-left: 3rem;
+  padding-bottom: 2rem;
+  padding-right: 3rem;
 }

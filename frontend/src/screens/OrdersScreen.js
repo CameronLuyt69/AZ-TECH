@@ -39,9 +39,7 @@ function OrdersScreen(props) {
               <th>TOTAL</th>
               <th>USER</th>
               <th>PAID</th>
-              <th>PAID AT</th>
               <th>DELIVERED</th>
-              <th>DELIVERED AT</th>
               <th>ACTIONS</th>
             </tr>
           </thead>
@@ -52,13 +50,11 @@ function OrdersScreen(props) {
               <td>{order.totalPrice}</td>
               <td>{order.user.name}</td>
               <td>{order.isPaid.toString()}</td>
-              <td>{order.paidAt}</td>
               <td>{order.isDelivered.toString()}</td>
-              <td>{order.deliveredAt}</td>
               <td>
-                <Link to={"/order/" + order._id} className="button secondary" >Details</Link>
+                <Link to={"/order/" + order._id} className="button"><i className="fas fa-info-circle"></i></Link>
                 {' '}
-                <button type="button" onClick={() => deleteHandler(order)} className="button secondary">Delete</button>
+                <button type="button" onClick={() => deleteHandler(order)} className="button"><i className="fas fa-trash-alt"></i></button>
               </td>
             </tr>))}
           </tbody>

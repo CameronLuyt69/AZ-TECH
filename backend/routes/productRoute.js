@@ -30,7 +30,7 @@ router.get('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
   const product = await Product.findOne({ _id: req.params.id });
   if (product) {
-    res.send(product);
+    res.send(product).catch((error) => console.log(error.reason));
   } else {
     res.status(404).send({ message: 'Product Not Found.' });
   }
@@ -54,7 +54,7 @@ router.post('/:id/reviews', isAuth, async (req, res) => {
     res.status(201).send({
       data: updatedProduct.reviews[updatedProduct.reviews.length - 1],
       message: 'Review saved successfully.',
-    });
+    }).catch((error) => console.log(error.reason));
   } else {
     res.status(404).send({ message: 'Product Not Found' });
   }
@@ -76,7 +76,7 @@ router.put('/:id', isAuth, isAdmin, async (req, res) => {
     if (updatedProduct) {
       return res
         .status(200)
-        .send({ message: 'Product Updated', data: updatedProduct });
+        .send({ message: 'Product Updated', data: updatedProduct }).catch((error) => console.log(error.reason));
     }
   }
   return res.status(500).send({ message: ' Error in Updating Product.' });
@@ -87,13 +87,13 @@ router.delete('/:id', isAuth, isAdmin, async (req, res) => {
   const deletedProduct = await Product.findById(req.params.id);
   if (deletedProduct) {
     await deletedProduct.remove();
-    res.send({ message: 'Product Deleted' });
+    res.send({ message: 'Product Deleted' }).catch((error) => console.log(error.reason));
   } else {
     res.send('Error in Deletion.');
   }
 });
 
-// Create Product
+// Create
 router.post('/', isAuth, isAdmin, async (req, res) => {
   const product = new Product({
     name: req.body.name,
@@ -110,7 +110,7 @@ router.post('/', isAuth, isAdmin, async (req, res) => {
   if (newProduct) {
     return res
       .status(201)
-      .send({ message: 'New Product Created', data: newProduct });
+      .send({ message: 'New Product Created', data: newProduct }).catch((error) => console.log(error.reason));
   }
   return res.status(500).send({ message: ' Error in Creating Product.' });
 });

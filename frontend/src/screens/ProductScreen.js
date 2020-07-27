@@ -48,7 +48,7 @@ function ProductScreen(props) {
   return (
     <div>
       <div className="back-to-result">
-        <Link to="/">Back to result</Link>
+        <Link to="/"><i className="fas fa-arrow-circle-left"></i></Link>
       </div>
       {loading ? (
         <div>Loading...</div>
@@ -96,6 +96,7 @@ function ProductScreen(props) {
                     onChange={(e) => {
                       setQty(e.target.value);
                     }}
+                    className="browser-default"
                   >
                     {[...Array(product.countInStock).keys()].map((x) => (
                       <option key={x + 1} value={x + 1}>
@@ -117,7 +118,7 @@ function ProductScreen(props) {
               </ul>
             </div>
           </div>
-          <div className="content-margined">
+          <div className="content-margined review-contain">
             <h2>Reviews</h2>
             {!product.reviews.length && <div>There is no review</div>}
             <ul className="review" id="reviews">
@@ -135,24 +136,25 @@ function ProductScreen(props) {
                 <h3>Write a customer review</h3>
                 {userInfo ? (
                   <form onSubmit={submitHandler}>
-                    <ul className="form-container">
+                    <ul className="form-container write-review">
                       <li>
-                        <label htmlFor="rating">Rating</label>
-                        <select
-                          name="rating"
-                          id="rating"
-                          value={rating}
-                          onChange={(e) => setRating(e.target.value)}
-                        >
-                          <option value="1">1- Poor</option>
-                          <option value="2">2- Fair</option>
-                          <option value="3">3- Good</option>
-                          <option value="4">4- Very Good</option>
-                          <option value="5">5- Excelent</option>
-                        </select>
+                        <h4>Rating</h4>
+                          <select
+                            name="rating"
+                            id="rating"
+                            value={rating}
+                            onChange={(e) => setRating(e.target.value)}
+                            className="browser-default"
+                          >
+                            <option value="1">1- Poor</option>
+                            <option value="2">2- Fair</option>
+                            <option value="3">3- Good</option>
+                            <option value="4">4- Very Good</option>
+                            <option value="5">5- Excelent</option>
+                          </select>
                       </li>
                       <li>
-                        <label htmlFor="comment">Comment</label>
+                        <h4>Comment</h4>
                         <textarea
                           name="comment"
                           value={comment}
