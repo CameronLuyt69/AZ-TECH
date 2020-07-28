@@ -25,14 +25,7 @@ const listProducts = (
 ) => async (dispatch) => {
   try {
     dispatch({ type: PRODUCT_LIST_REQUEST });
-    const { data } = await axios.get(
-      '/api/products?category=' +
-        category +
-        '&searchKeyword=' +
-        searchKeyword +
-        '&sortOrder=' +
-        sortOrder
-    );
+    const { data } = await axios.get('/api/products?category=' + category + '&searchKeyword=' + searchKeyword + '&sortOrder=' + sortOrder);
     dispatch({ type: PRODUCT_LIST_SUCCESS, payload: data });
   } catch (error) {
     dispatch({ type: PRODUCT_LIST_FAIL, payload: error.message });
@@ -79,7 +72,7 @@ const detailsProduct = (productId) => async (dispatch) => {
   }
 };
 
-const deleteProdcut = (productId) => async (dispatch, getState) => {
+const deleteProduct = (productId) => async (dispatch, getState) => {
   try {
     const {
       userSignin: { userInfo },
@@ -124,6 +117,6 @@ export {
   listProducts,
   detailsProduct,
   saveProduct,
-  deleteProdcut,
+  deleteProduct,
   saveProductReview,
 };

@@ -41,7 +41,7 @@ function App() {
           </div>
           <div className="navbar">
             <ul>
-              <li><Link to="/"><i className="fas fa-home"></i></Link></li>
+              <li><Link to="/"><i className="fas fa-home active"></i></Link></li>
               <li><Link to="/cart/:id"><i className="fas fa-shopping-cart"></i></Link></li>
             {userInfo && userInfo.isAdmin && (
               <>

@@ -39,7 +39,7 @@ function ProductDisplayScreen(props) {
         <div>{error}</div>
       ) : (
         <React.Fragment>
-
+        
           <div className="filter">
             <div className="search-box">
               <form onSubmit={submitHandler} className="searchbox">

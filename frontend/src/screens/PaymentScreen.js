@@ -31,7 +31,7 @@ function PaymentScreen(props) {
                     className="with-gap"
                     name="paymentMethod"
                     id="paymentMethod"
-                    value="paypal"
+                    value="Paypal"
                     onChange={(e) => setPaymentMethod(e.target.value)}
                    />
                   <span>Paypal</span>

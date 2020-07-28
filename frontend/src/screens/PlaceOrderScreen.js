@@ -46,8 +46,7 @@ function PlaceOrderScreen(props) {
             Shipping
           </h3>
           <div>
-            {cart.shipping.address}, {cart.shipping.city},
-          {cart.shipping.postalCode}, {cart.shipping.country},
+            {cart.shipping.address}, {cart.shipping.city}, {cart.shipping.postalCode}, {cart.shipping.country}
           </div>
         </div>
         <div>
@@ -82,7 +81,6 @@ function PlaceOrderScreen(props) {
                         <Link to={"/product/" + item.product}>
                           {item.name}
                         </Link>
-
                       </div>
                       <div>
                         Qty: {item.qty}
@@ -100,11 +98,7 @@ function PlaceOrderScreen(props) {
 
       <div className="placeorder-action">
         <Route path="/profile" component={ProfileScreen} />
-
         <ul>
-          <li>
-            <Link to="/profile"><button className="button primary full-width" onClick={placeOrderHandler}>Place Order</button></Link>
-          </li>
           <li>
             <h3>Order Summary</h3>
           </li>
@@ -125,6 +119,9 @@ function PlaceOrderScreen(props) {
             <div>R{totalPrice}</div>
           </li>
         </ul>
+        <div className="order-button">
+          <Link to="/profile"><button className="button primary" onClick={placeOrderHandler}>Place Order</button></Link>
+        </div>
 
       </div>
     </div>

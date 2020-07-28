@@ -14,7 +14,7 @@ function CartScreen(props) {
   }
   useEffect(() => {
     if (productId) {
-      dispatch(addToCart(productId, qty));
+      dispatch(addToCart(productId, qty)).catch((error) => console.log(error.reason));
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -39,12 +39,14 @@ function CartScreen(props) {
             <div>
               Cart is empty
             </div>
-          :
+            :
             cartItems.map(item =>
               <li key={props.match.params.id}>
+
                 <div className="cart-image">
                   <img src={item.image} alt="product" />
                 </div>
+
                 <div className="cart-name">
                   <div>
                     <Link to={"/product/" + item.product}>
@@ -63,9 +65,11 @@ function CartScreen(props) {
                     </button>
                   </div>
                 </div>
+
                 <div className="cart-price">
                   R{item.price}
                 </div>
+                
               </li>
             )
         }

@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import {
   saveProduct,
   listProducts,
-  deleteProdcut,
+  deleteProduct,
 } from '../actions/productActions';
 
 function ProductsScreen(props) {
@@ -70,7 +70,7 @@ function ProductsScreen(props) {
     );
   };
   const deleteHandler = (product) => {
-    dispatch(deleteProdcut(product._id));
+    dispatch(deleteProduct(product._id));
   };
   return (
     <div className="content content-margined">
@@ -158,7 +158,7 @@ function ProductsScreen(props) {
               </li>
               <li>
                 <button type="submit" className="button primary">
-                  {id ? 'Update' : 'Create'}
+                  {id ? 'Confirm' : 'Create'}
                 </button>
               </li>
               <li>
@@ -167,7 +167,7 @@ function ProductsScreen(props) {
                   onClick={() => setModalVisible(false)}
                   className="button secondary"
                 >
-                  Back
+                  Cancel
                 </button>
               </li>
             </ul>
