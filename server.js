@@ -31,11 +31,11 @@ app.get('/api/config/paypal', (req, res) => {
   res.send(config.PAYPAL_CLIENT_ID);
 });
 app.use('/uploads', express.static(path.join(__dirname, '/../uploads')));
-app.use(express.static(path.join(__dirname, '/../client')));
+app.use(express.static(path.join(__dirname, '/client/static')));
 app.get('*', (req, res) => {
   console.log("Hello World..");
   console.log(__dirname);
-  res.sendFile(path.join(`${__dirname}/client/public/index.html`));
+  res.sendFile(path.join(`${__dirname}/client/build/index.html`));
 });
 
 app.listen(config.PORT, () => {
