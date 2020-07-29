@@ -35,6 +35,7 @@ app.use(express.static(path.join(__dirname, '/client/static')));
 app.get('*', (req, res) => {
   console.log("Hello World..");
   console.log(__dirname);
+  console.log(path.join(`${__dirname}/client/build/index.html`));
   res.sendFile(path.join(`${__dirname}/client/build/index.html`));
 });
 
