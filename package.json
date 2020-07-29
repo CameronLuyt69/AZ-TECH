@@ -1,5 +1,4 @@
 {
-  "hompage": "http://cameronluyt69.github.io/AZ-TECH",
   "name": "az-tech",
   "version": "1.0.0",
   "description": "AZ TECH",
@@ -7,10 +6,10 @@
   "scripts": {
     "start": "node server.js",
     "server": "nodemon server.js",
-    "frontend": "npm start --prefix frontend",
-    "frontendinstall": "npm install --prefix frontend",
-    "dev": "concurrently \"npm run server\" \"npm run frontend\"",
-    "heroku-postbuild": "cd frontend && npm install && npm run build"
+    "frontend": "npm start --prefix client",
+    "frontendinstall": "npm install --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "cd client && npm install && npm run build"
   },  
   "repository": {
     "type": "git",
