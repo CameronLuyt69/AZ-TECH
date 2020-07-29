@@ -33,9 +33,9 @@ app.get('/api/config/paypal', (req, res) => {
 app.use('/uploads', express.static(path.join(__dirname, '/../uploads')));
 app.use(express.static(path.join(__dirname, '/client/build/static')));
 app.get('*', (req, res) => {
-  console.log("Hello World..");
-  console.log(__dirname);
-  console.log(path.join(`${__dirname}/client/build/index.html`));
+  // console.log("Hello World..");
+  // console.log(__dirname);
+  // console.log(path.join(`${__dirname}/client/build/index.html`));
   res.sendFile(path.join(`${__dirname}/client/build/index.html`));
 });
 
