@@ -31,11 +31,11 @@
     "nodemon": "^2.0.2"
   },
   "scripts": {
-    "start": "nodemon --exec babel-node server.js",
-    "server": "nodemon --exec babel-node server.js",
+    "start": "node server.js",
+    "server": "nodemon server.js",
     "frontend": "npm start --prefix frontend",
-    "dev": "concurrently \"npm run server\" \"npm run frontend\"",
-    "frontend-install": "npm install --prefix client"
+    "frontendinstall": "npm install --prefix frontend",
+    "dev": "concurently \"npm run server\" \"npm run frontend\""
   },
   "repository": {
     "type": "git",
