@@ -31,7 +31,7 @@
     "nodemon": "^2.0.2"
   },
   "scripts": {
-    "start": "node --exec babel-node server.js",
+    "start": "nodemon --exec babel-node server.js",
     "server": "nodemon --exec babel-node server.js",
     "frontend": "npm start --prefix frontend",
     "dev": "concurrently \"npm run server\" \"npm run frontend\"",
