@@ -10,7 +10,7 @@
     "frontendinstall": "npm install --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "heroku-postbuild": "cd client && npm install && npm run build"
-  },  
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/CameronLuyt69/E-commerce.git"
