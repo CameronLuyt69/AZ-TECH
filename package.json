@@ -1,9 +1,29 @@
 {
-  "hompage": "http://cameronluyt69.github.io/AZ-TECH",
-  "name": "AZ-TECH",
+  "name": "az-tech",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "AZ TECH",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "frontend": "npm start --prefix client",
+    "frontendinstall": "npm install --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "cd client && npm install && npm run build"
+  },  
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CameronLuyt69/E-commerce.git"
+  },
+  "author": "Cameron",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CameronLuyt69/E-commerce/issues"
+  },
+  "engines": {
+    "node": "12.4.0",
+    "npm": "6.9.0"
+  },
   "dependencies": {
     "aws-sdk": "^2.702.0",
     "body-parser": "^1.19.0",
@@ -29,26 +49,5 @@
     "eslint-plugin-react-hooks": "^2.5.1",
     "gh-pages": "^3.1.0",
     "nodemon": "^2.0.2"
-  },
-  "scripts": {
-    "start": "nodemon --exec babel-node server.js",
-    "server": "nodemon --exec babel-node server.js",
-    "frontend": "npm start --prefix frontend",
-    "dev": "concurrently \"npm run server\" \"npm run frontend\"",
-    "frontend-install": "npm install --prefix client"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/CameronLuyt69/E-commerce.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/CameronLuyt69/E-commerce/issues"
-  },
-  "homepage": "https://github.com/CameronLuyt69/E-commerce#readme",
-  "engines": {
-    "node": "12.4.0",
-    "npm": "6.9.0"
   }
 }

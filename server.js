@@ -1,13 +1,13 @@
-import express from 'express';
-import path from 'path';
-import mongoose from 'mongoose';
-import bodyParser from 'body-parser';
-import config from './config';
-import dotenv from 'dotenv'
-import userRoute from './routes/userRoute';
-import productRoute from './routes/productRoute';
-import orderRoute from './routes/orderRoute';
-import uploadRoute from './routes/uploadRoute';
+const express = require('express');
+const path = require('path');
+const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
+const config = require('./config');
+const dotenv = require('dotenv');
+const userRoute = require('./routes/userRoute');
+const productRoute = require('./routes/productRoute');
+const orderRoute = require('./routes/orderRoute');
+const uploadRoute = require('./routes/uploadRoute');
 
 dotenv.config();
 
@@ -31,9 +31,12 @@ app.get('/api/config/paypal', (req, res) => {
   res.send(config.PAYPAL_CLIENT_ID);
 });
 app.use('/uploads', express.static(path.join(__dirname, '/../uploads')));
-app.use(express.static(path.join(__dirname, '/../frontend')));
+app.use(express.static(path.join(__dirname, '/client/build')));
 app.get('*', (req, res) => {
-  res.sendFile(path.join(`${__dirname}/frontend/public/index.html`));
+  // console.log("Hello World..");
+  // console.log(__dirname);
+  // console.log(path.join(`${__dirname}/client/build/index.html`));
+  res.sendFile(path.join(`${__dirname}/client/build/index.html`));
 });
 
 app.listen(config.PORT, () => {
