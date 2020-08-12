@@ -36,30 +36,30 @@ function App() {
 
         <header>
           <div className="logos">
-            <a href="/" data-target="slide-out" className="sidenav-trigger bolder"><i className="fas fa-bars"></i></a>
-            <Link to="/">AZ-TECH</Link>
+            <a href="/" data-target="slide-out" className="sidenav-trigger bolder top-pad"><i className="fas fa-bars"></i></a>
+            <Link to="/" className="sitelogo top-pad">AZ-TECH</Link>
           </div>
           <div className="navbar">
             <ul>
-              <li><Link to="/"><i className="fas fa-home active"></i></Link></li>
-              <li><Link to="/cart/:id"><i className="fas fa-shopping-cart"></i></Link></li>
+              <li className="top-pad"><Link to="/"><i className="fas fa-home active"></i></Link></li>
+              <li className="top-pad"><Link to="/cart/:id"><i className="fas fa-shopping-cart"></i></Link></li>
             {userInfo && userInfo.isAdmin && (
               <>
-              <li><Link to="/orders"><i className="fas fa-tasks"></i></Link></li>
-              <li><Link to="/products"><i className="fas fa-warehouse"></i></Link></li>
+              <li className="top-pad"><Link to="/orders"><i className="fas fa-tasks"></i></Link></li>
+              <li className="top-pad"><Link to="/products"><i className="fas fa-warehouse"></i></Link></li>
               </>
             )}
             {userInfo ? (
-              <li><Link to="/profile"><i className="fas fa-user"></i></Link></li>
+              <li className="top-pad"><Link to="/profile"><i className="fas fa-user"></i></Link></li>
             ) : (
-              <li><Link to="/signin"><i className="fas fa-sign-in-alt"></i></Link></li>
+              <li className="top-pad"><Link to="/signin"><i className="fas fa-sign-in-alt"></i></Link></li>
             )}
             </ul>
           </div>
         </header>
               
         <ul id="slide-out" className="sidenav">
-              <div className="header black card-panel indigo-text"><h4>Shopping Categories</h4></div>
+              <div className="header black card-panel blue-text"><h4>Shopping Categories</h4></div>
               <li>
                 <Link to="/category/Phones"><i className="fas fa-mobile-alt"></i>Phones</Link>
               </li>

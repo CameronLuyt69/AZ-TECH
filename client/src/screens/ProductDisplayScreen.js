@@ -31,8 +31,6 @@ function ProductDisplayScreen(props) {
     <React.Fragment>
       {category && <h2>{category}</h2>}
 
-
-
       {loading ? (
         <div>Loading...</div>
       ) : error ? (
@@ -58,6 +56,7 @@ function ProductDisplayScreen(props) {
 
           <ul className="products">
             {products.map((product) => (
+
               <li key={product._id}>
                 <div className="product card-panel">
                   <Link to={'/product/' + product._id}>
@@ -76,7 +75,6 @@ function ProductDisplayScreen(props) {
                     />
                   </div>
                   </div>
-                  
                 </div>
               </li>
             ))}

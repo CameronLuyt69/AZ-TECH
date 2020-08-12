@@ -32,7 +32,7 @@ th {
 .headers {
   grid-area: headers;
   background-color: #000000;
-  color: #55f;
+  color: #007cf8;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -44,26 +44,26 @@ th {
   width: 30%;
 }
 .brand a {
-  color: #55f;
+  color: #007cf8;
   font-size: 60px;
   font-weight: bold;
   text-decoration: none;
 }
 .brand a Link {
-  color: #55f;
+  color: #007cf8;
   font-size: 40px;
   font-weight: bold;
   text-decoration: none;
   padding-left: 10rem;
 }
 .brand a i {
-  color: #55f;
+  color: #007cf8;
   font-size: 40px;
   font-weight: bold;
   text-decoration: none;
 }
 .header-links a {
-  color: #55f;
+  color: #007cf8;
   text-decoration: none;
   padding: 1rem;
   font-size: 3rem;
@@ -92,7 +92,7 @@ th {
   flex-direction: column;
 }
 .foot1 {
-  color: #55f;
+  color: #007cf8;
   flex: 1 1 5rem;
   display: flex;
   flex-direction: row;
@@ -123,10 +123,10 @@ th {
   display: flex;
   justify-content: space-evenly;
   font-size: 2rem;
-  color: #55f;
+  color: #007cf8;
 }
 .socials a {
-  color: #55f;
+  color: #007cf8;
 }
 .foot2 {
   height: 3rem;
@@ -218,15 +218,15 @@ ul.review {
   font-size: 1.4rem;
 }
 a > .rating > span:last-child {
-  color: #55f;
+  color: #007cf8;
 }
 /*==================================================================*/
 
-/* Sidenav */   /**//**//**/
+/* Sidenav */
 .head {
   margin-left: 30px;
   background-color: rgb(0, 0, 0);
-  color: #55f;
+  color: #007cf8;
   display: block;
 }
 /*====================================================================*/
@@ -296,11 +296,11 @@ button {
   color: #000000;
 }
 .button.primary {
-  background-color: #55f;
+  background-color: #007cf8;
 }
 .button.secondary {
   background-color: #bebaba;
-  color: #55f;
+  color: #007cf8;
 }
 /*======================================================*/
 
@@ -419,8 +419,8 @@ tbody > tr:nth-child(odd) {
   padding-top: 1rem;
 }
 .checkout-steps > div.active {
-  border-top: 0.3rem #55f solid;
-  color: #55f;
+  border-top: 0.3rem #007cf8 solid;
+  color: #007cf8;
 }
 /*==========================================================================*/
 
@@ -470,7 +470,7 @@ tbody > tr:nth-child(odd) {
 .placeorder-action > ul > li:last-child {
   font-size: 2rem;
   font-weight: bold;
-  color: #55f;
+  color: #007cf8;
 }
 .placeorder-actions-status > div {
   width: 100%;
@@ -509,7 +509,7 @@ tbody > tr:nth-child(odd) {
   list-style-type: none;
   z-index: 1;
   background-color: #000000;
-  color: #55f;
+  color: #007cf8;
   margin: 0;
   margin-top: 0.4rem;
   display: none;
@@ -554,8 +554,8 @@ tbody > tr:nth-child(odd) {
 }
 .searchbox input:focus {
   transition: all 0.5s;
-  box-shadow: 0 0 40px #55f;
-  border-color: #55f;
+  box-shadow: 0 0 40px #007cf8;
+  border-color: #007cf8;
   outline: none;
 }
 .searchbox button {
@@ -581,7 +581,7 @@ tbody > tr:nth-child(odd) {
 .categories a {
   display: flex;
   padding: 1rem;
-  color: #55f;
+  color: #007cf8;
 }
 .categories a:hover {
   background-color: #c0c0c0;
@@ -600,24 +600,28 @@ header {
   box-sizing: border-box;
 }
 header div a {
-  color: #55f;
+  color: #007cf8;
   font-size: 4rem;
   padding-right: 3rem;
 }
 header div Link {
   padding-left: 3rem;
 }
-
+.top-pad {
+  padding-top: 1rem;
+}
 header .logos{
-  color: #55f;
-  height: 50px;
+  color: #007cf8;
+  height: 70px;
   line-height: 50px;
   font-size: 24px;
-  margin-left: 0px;
   float: left;
   font-weight: bold;
   display: flex;
   justify-content: space-between;
+}
+.sitelogo {
+  font-size: 7rem;
 }
 header .navbar {
   float: right;
@@ -634,14 +638,14 @@ header .navbar ul li a {
   height: 50px;
   line-height: 50px;
   padding: 0 20px;
-  color: #55f;
+  color: #007cf8;
   text-decoration: none;
   display: block;
 }
 header .navbar ul li a:hover,
 header .navbar ul li Link.active {
   color: rgb(0, 0, 0);
-  background: #55f;
+  background: #007cf8;
 }
 @media (max-width: 900px){
   /* Header/Nav */
@@ -654,7 +658,7 @@ header .navbar ul li Link.active {
   }
   header .navbar {
     position: absolute;
-    width: 100%;
+    width: 110%;
     height: calc(100vb - 50px);
     background: rgb(0, 0, 0);
     top: 50px;
@@ -666,7 +670,7 @@ header .navbar ul li Link.active {
     text-align: center;
   }
   header .navbar ul li a {
-    border-bottom: 1px solid #55f;
+    border-bottom: 1px solid #007cf8;
   }
   /*==============================================================*/
   /* Footer */
@@ -678,6 +682,7 @@ header .navbar ul li Link.active {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    width: 100%;
   }
   .footer .footy h3 {
     font-size: 2rem;
@@ -688,7 +693,7 @@ header .navbar ul li Link.active {
     flex-direction: column;
   }
   .foot1 {
-    color: #55f;
+    color: #007cf8;
     flex: 1 1 5rem;
     display: flex;
     flex-direction: row;
@@ -719,10 +724,10 @@ header .navbar ul li Link.active {
     display: flex;
     justify-content: space-evenly;
     font-size: 1.2rem;
-    color: #55f;
+    color: #007cf8;
   }
   .socials a {
-    color: #55f;
+    color: #007cf8;
   }
   .foot2 {
     height: 3rem;
@@ -731,7 +736,7 @@ header .navbar ul li Link.active {
 }
 /*==============================================================*/
 .infomo Link {
-  text-decoration: #55f;
+  text-decoration: #007cf8;
 }
 /* Terms Of Use */
 
