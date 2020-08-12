@@ -658,7 +658,7 @@ header .navbar ul li Link.active {
   }
   header .navbar {
     position: absolute;
-    width: 110%;
+    width: 100%;
     height: calc(100vb - 50px);
     background: rgb(0, 0, 0);
     top: 50px;
