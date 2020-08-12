@@ -665,6 +665,9 @@ header .navbar ul li Link.active {
     left: 0;
     transition: 0.5s;
   }
+  .sitelogo {
+    font-size: 4rem;
+  }
   header .navbar ul {
     display: block;
     text-align: center;
