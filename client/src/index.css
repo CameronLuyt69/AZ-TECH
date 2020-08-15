@@ -489,7 +489,7 @@ tbody > tr:nth-child(odd) {
   padding-bottom: 3.5rem;
 }
 .profile-orders {
-  flex: 3 1 90rem;
+  flex: 3 1 70rem;
   padding-top: 1.5rem;
 }
 .form-container div{

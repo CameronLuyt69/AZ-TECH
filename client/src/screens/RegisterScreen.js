@@ -25,9 +25,15 @@ function RegisterScreen(props) {
   }, [userInfo]);
 
   const submitHandler = (e) => {
-    e.preventDefault();
-    dispatch(register(name, email, password));
+    if (password === rePassword) {
+      e.preventDefault();
+      dispatch(register(name, email, password));
+    }
+    else {
+      alert("Passwords didn't match")
+    };
   }
+
   return <div className="form">
     <form onSubmit={submitHandler} >
       <ul className="form-container">
